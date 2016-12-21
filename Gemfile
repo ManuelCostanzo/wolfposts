@@ -59,3 +59,7 @@ source 'https://rails-assets.org' do
 end
 
 gem 'bootstrap_form'
+
+gem 'devise'
+
+gem 'cancancan'
