@@ -63,3 +63,5 @@ gem 'bootstrap_form'
 gem 'devise'
 
 gem 'cancancan'
+
+gem 'rails-i18n', '~> 5.0.0'

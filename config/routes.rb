@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+	root to: 'home#index' 
 	
 	devise_for :users, path: '', path_names: { sign_in: 'ingresar', sign_out: 'salir', sign_up: 'registrarse', edit: 'editar-cuenta'}
 

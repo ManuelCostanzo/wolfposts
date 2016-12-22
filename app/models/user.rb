@@ -1,6 +1,9 @@
 class User < ApplicationRecord
 
+  # Associations
   belongs_to :role
+  has_many :permissions_roles, through: :role
+  has_many :permissions, through: :permissions_roles
 	
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :lockable

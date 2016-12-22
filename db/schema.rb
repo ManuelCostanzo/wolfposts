@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161221210731) do
+ActiveRecord::Schema.define(version: 20161221235211) do
+
+  create_table "permissions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "subject_class"
+    t.integer  "subject_id"
+    t.string   "action"
+    t.text     "description",   limit: 65535
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "permissions_roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "permission_id"
+    t.integer "role_id"
+    t.index ["permission_id"], name: "index_permissions_roles_on_permission_id", using: :btree
+    t.index ["role_id"], name: "index_permissions_roles_on_role_id", using: :btree
+  end
 
   create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
