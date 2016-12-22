@@ -9,5 +9,10 @@
 Role.create! [
 { name: 'Administrador' },
 { name: 'Moderador' },
-{ name: 'Nuevo' }
+{ name: 'Nuevo' },
+{ name: 'Visitante' }
+]
+
+PermissionsRole.create! [
+{ permission_id: 1, role_id: 1 },
 ]

@@ -13,11 +13,10 @@
 ActiveRecord::Schema.define(version: 20161221235211) do
 
   create_table "permissions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.string   "subject_class"
-    t.integer  "subject_id"
-    t.string   "action"
-    t.text     "description",   limit: 65535
+    t.string   "name",                        null: false
+    t.string   "subject_class",               null: false
+    t.string   "action",                      null: false
+    t.text     "description",   limit: 65535, null: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
@@ -39,7 +38,7 @@ ActiveRecord::Schema.define(version: 20161221235211) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "username",               default: "", null: false
-    t.integer  "role_id"
+    t.integer  "role_id",                default: 3,  null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"

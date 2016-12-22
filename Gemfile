@@ -65,3 +65,5 @@ gem 'devise'
 gem 'cancancan'
 
 gem 'rails-i18n', '~> 5.0.0'
+
+gem 'rails_admin', '~> 1.0'

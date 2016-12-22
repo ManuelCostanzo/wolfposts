@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-	load_and_authorize_resource :class => false
+	skip_authorization_check :only => [:index]
 	def index
 
 	end
